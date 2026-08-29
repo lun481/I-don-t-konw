@@ -287,7 +287,7 @@ function init() {
     
     // 欢迎提示
     setTimeout(() => {
-        showToast('👋 欢迎来到小蛋留言板！');
+        showToast('👋 欢迎来留言板！');
     }, 800);
 }
 
