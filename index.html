@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>CyberFun 趣味解压玩具箱</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#12131C">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+  <div id="app-container">
+    <!-- 主页导航视图 -->
+    <header class="app-header" id="main-header">
+      <div class="logo-area">
+        <div class="logo-icon">🎮</div>
+        <div>
+          <h1 class="app-title">CyberFun 玩具箱</h1>
+          <p class="app-subtitle">解压摸鱼 · 趣味恶搞 · 实用工具</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="theme-sound-toggle" class="icon-btn" title="静音/开启音效">🔊</button>
+      </div>
+    </header>
+
+    <!-- 首页卡片列表 -->
+    <main class="main-content" id="home-view">
+      <div class="category-tabs">
+        <button class="tab-btn active" data-cat="all">全部</button>
+        <button class="tab-btn" data-cat="relax">解压发泄</button>
+        <button class="tab-btn" data-cat="prank">摸鱼恶搞</button>
+        <button class="tab-btn" data-cat="tools">趣味工具</button>
+        <button class="tab-btn" data-cat="game">小游戏</button>
+      </div>
+
+      <div class="card-grid" id="tools-grid">
+        <!-- 1. 电子木鱼 -->
+        <div class="tool-card" data-app="muyu" data-cat="relax">
+          <div class="card-badge">热门</div>
+          <div class="card-icon muyu-icon">🪵</div>
+          <div class="card-info">
+            <h3 class="card-title">赛博电子木鱼</h3>
+            <p class="card-desc">敲木鱼积攒功德，烦恼-1，头发+1</p>
+          </div>
+        </div>
+
+        <!-- 2. 赛博气泡膜 -->
+        <div class="tool-card" data-app="bubble" data-cat="relax">
+          <div class="card-badge">解压</div>
+          <div class="card-icon">🫧</div>
+          <div class="card-info">
+            <h3 class="card-title">捏捏气泡膜</h3>
+            <p class="card-desc">无尽解压泡泡纸，还原真实捏爆声</p>
+          </div>
+        </div>
+
+        <!-- 3. 答案之书与命运转盘 -->
+        <div class="tool-card" data-app="answers" data-cat="tools">
+          <div class="card-badge">抉择</div>
+          <div class="card-icon">📖</div>
+          <div class="card-info">
+            <h3 class="card-title">答案之书 & 转盘</h3>
+            <p class="card-desc">选择困难救星，今天吃什么/是否行动</p>
+          </div>
+        </div>
+
+        <!-- 4. 假装系统升级/蓝屏 -->
+        <div class="tool-card" data-app="fakeupdate" data-cat="prank">
+          <div class="card-badge">恶搞</div>
+          <div class="card-icon">⚠️</div>
+          <div class="card-info">
+            <h3 class="card-title">假装系统蓝屏/更新</h3>
+            <p class="card-desc">卡在99%更新中，摸鱼绝佳借口</p>
+          </div>
+        </div>
+
+        <!-- 5. 屏幕碎屏恶搞 -->
+        <div class="tool-card" data-app="cracked" data-cat="prank">
+          <div class="card-badge">恶搞</div>
+          <div class="card-icon">🔨</div>
+          <div class="card-info">
+            <h3 class="card-title">屏幕破坏粉碎机</h3>
+            <p class="card-desc">点击屏幕留下弹孔裂纹与猫爪印</p>
+          </div>
+        </div>
+
+        <!-- 6. 指尖流光烟花 -->
+        <div class="tool-card" data-app="fireworks" data-cat="relax">
+          <div class="card-badge">视觉</div>
+          <div class="card-icon">✨</div>
+          <div class="card-info">
+            <h3 class="card-title">指尖粒子烟花</h3>
+            <p class="card-desc">触控拖曳绽放炫彩烟花粒子，唯美治愈</p>
+          </div>
+        </div>
+
+        <!-- 7. 反应力挑战 -->
+        <div class="tool-card" data-app="reaction" data-cat="game">
+          <div class="card-badge">挑战</div>
+          <div class="card-icon">⚡</div>
+          <div class="card-info">
+            <h3 class="card-title">毫秒反应力测试</h3>
+            <p class="card-desc">红绿变色极限反应，测测你的神经反射速度</p>
+          </div>
+        </div>
+
+        <!-- 8. 白噪音与发呆钟 -->
+        <div class="tool-card" data-app="whitenoise" data-cat="relax">
+          <div class="card-badge">助眠</div>
+          <div class="card-icon">🌧️</div>
+          <div class="card-info">
+            <h3 class="card-title">沉浸式解压白噪音</h3>
+            <p class="card-desc">纯算法合成雨声、柴火声、宇宙波与静心钟</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 各独立小程序视图容器 (Modal / Page) -->
+    <div id="sub-app-view" class="sub-app-view hidden">
+      <!-- 统一顶部导航栏 -->
+      <nav class="sub-nav">
+        <button id="btn-back" class="nav-back-btn">
+          <span class="back-arrow">‹</span> 返回
+        </button>
+        <h2 id="sub-title" class="sub-title">小程序名称</h2>
+        <div class="sub-actions" id="sub-actions"></div>
+      </nav>
+
+      <!-- 小程序实际内容区域 -->
+      <div class="sub-content" id="sub-container"></div>
+    </div>
+  </div>
+
+  <script src="js/audio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
